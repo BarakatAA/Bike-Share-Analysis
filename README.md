@@ -23,6 +23,7 @@ Next, I created a new column to calculate the age from the birth year given. I c
 The Start time and End time both had dates attached to the time and I had to use a text-to-column function to separate the time from the date and created a new column for the date. Thereafter, I used the Number format in the Home tab to convert the DateTime to time only. This way I had a start time, end time, and a date column respectively.
 
 While there was a trip duration given in the columns, the values were higher than usual, and because it wasn’t specified if it was a duration in distance (miles covered) or duration by time, I created a new column I called ‘Duration time’ to find duration by time. I did this by subtracting the newly separated start time from the end time and with this new duration time, was able to calculate the average trip duration, maximum trip duration, and minimum trip duration.
+
 Next, I sought to establish the trip routes by creating a column called trip data where I combined both the start station and end stations on corresponding rows using the CONCATENATE function and with a COUNTIF function, determined the male and female customer distribution from the range of gender column and also the customer type distribution from the User type column. I also created a new column to extract the day of the week from the start date column. For this, I used a text TEXT(COLUMN ‘ddd’) function.
 
 Finally, I created age bins by grouping the calculated customer ages into groups of 20-29, 30-39,40-49… etc using the COUNTIF function to get the numbers for each age group. Following this, I moved on to creating pivot tables to gain a more in-depth analysis of my dataset.
@@ -42,5 +43,7 @@ For my analysis and to answer pressing data questions, I made use of pivot table
 -----
 # Conclusion and Recommendation
 A total of 661 trips were analyzed in the bike share dataset of which 79% were male and 21% were female. The 30-39 age group was the most active user while there were more subscribers than one-off customers. While this is a positive step, the 11% one-off users (customers) are a potential revenue source that can be targeted by the rideshare company to become repeat customers (subscribers). This will help improve the company's bottom line by bringing in more revenue and profit. 
+
 The majority of the users are also male and this could mean that men are more likely to use a bike share service or that a potential marketing opportunity exists where the bike share company can target and grow its female customer segment. To this end, more user research is recommended.
+
 Next, Central Park S & Avenue was the top start station while there was a tie for the top-end station. An interesting observation made during my analysis was the trip from the start station Lafeyette St to the end station Division St which took over 2 hours. It would be fitting to find out the distance in miles between both stations taking into consideration the various routes to determine why this trip took that long especially as the average trip duration for all trips was 13:36 secs. 
