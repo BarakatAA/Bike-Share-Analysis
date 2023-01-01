@@ -17,10 +17,14 @@ After importing the bike share dataset into Microsoft Excel, I transformed it by
 -----
 # Cleaning Process
 The ride share dataset had a total of 661 rows and 9 columns including columns for Customer ID, Start time, End time, Trip duration, End Station, Start Station, User Type, Gender, and Birth Year. I checked for blank rows and found a few in the Gender and Birth year columns. I proceeded to fill in the blank rows under birth year with 0 and the spaces under gender with Not Available (NA) since the customers might have declined to fill in those bits and there was no logical way to impute the correct gender or birth year. I also checked the dataset to ensure all the columns had the correct data type.
+
 Next, I created a new column to calculate the age from the birth year given. I calculated the age by subtracting the current year 2022 from each year already given in the birth year column.
+
 The Start time and End time both had dates attached to the time and I had to use a text-to-column function to separate the time from the date and created a new column for the date. Thereafter, I used the Number format in the Home tab to convert the DateTime to time only. This way I had a start time, end time, and a date column respectively.
+
 While there was a trip duration given in the columns, the values were higher than usual, and because it wasn’t specified if it was a duration in distance (miles covered) or duration by time, I created a new column I called ‘Duration time’ to find duration by time. I did this by subtracting the newly separated start time from the end time and with this new duration time, was able to calculate the average trip duration, maximum trip duration, and minimum trip duration.
 Next, I sought to establish the trip routes by creating a column called trip data where I combined both the start station and end stations on corresponding rows using the CONCATENATE function and with a COUNTIF function, determined the male and female customer distribution from the range of gender column and also the customer type distribution from the User type column. I also created a new column to extract the day of the week from the start date column. For this, I used a text TEXT(COLUMN ‘ddd’) function.
+
 Finally, I created age bins by grouping the calculated customer ages into groups of 20-29, 30-39,40-49… etc using the COUNTIF function to get the numbers for each age group. Following this, I moved on to creating pivot tables to gain a more in-depth analysis of my dataset.
 
 -----
